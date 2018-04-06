@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+    <style>
+        #container {
+            padding: 50px;
+            background-color: #eee;
+        }
+
+        #container h1 {
+            font-size: 144px;
+            font-family: sans-serif;
+            color: #0080a8;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script type="text/babel">
+    let destination = document.querySelector("#container")
+    console.log(destination);
+    ReactDOM.render(
+        <h1>text</h1>,
+        destination
+    );
+</script>
+</body>
+</html>

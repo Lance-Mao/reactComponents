@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./build/browser.min.js"></script>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <title>React Component</title>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/babel">
+    let HelloWorld = React.createClass({
+        render: function () {
+            return (
+                <div>
+                    <p>Hello {this.props.greetTarget}!</p>
+                </div>
+            );
+        }
+    })
+    ReactDOM.render(
+        <div>
+            <HelloWorld greetTarget="Tyler"/>
+            <HelloWorld greetTarget="Nancy"/>
+            <HelloWorld greetTarget="Jacket"/>
+        </div>
+        ,
+        document.querySelector("#container")
+    )
+</script>
+</body>
+</html>

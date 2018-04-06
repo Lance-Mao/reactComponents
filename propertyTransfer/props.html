@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/babel">
+    let destination = document.querySelector("#container");
+
+    let Display = React.createClass({
+        render: function () {
+            return (
+                <div>
+                    <p>{this.props.color}</p>
+                    <p>{this.props.num}</p>
+                    <p>{this.props.size}</p>
+                </div>
+            );
+        }
+    });
+
+    let Label = React.createClass({
+        render: function () {
+            return (
+                <Display {...this.props}/>
+            );
+        }
+    });
+
+    let Shirt = React.createClass({
+        render: function () {
+            return (
+                <Label {...this.props}/>
+            );
+        }
+    });
+
+    ReactDOM.render(
+        <div>
+            <Shirt color="deepblue" num="3.14" size="medium"/>
+        </div>,
+        destination
+    )
+</script>
+</body>
+</html>
